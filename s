@@ -1,20 +1,5 @@
-wait(1.5)
-game.StarterGui:SetCore("SendNotification", {
-Title = "Storm.Tap | 1.3.0 | PRIVATE | ".. game.Players.LocalPlayer.Name..''; -- 
-Text = "Storm.Tap Has Been Injected!"; -- 
-Icon = "rbxassetid://1297630667"; -- t
-Duration = 5; -- 
-})
-
 getgenv().values = {}
 local library = {} 
-
-local library = loadstring(game:HttpGet'https://raw.githubusercontent.com/CatzCode/PikaHub/main/Libraries/UI/bruh.lua')()
-library:CreateWatermark("Storm.Tap | 1.3.0 | PRIVATE | ".. game.Players.LocalPlayer.Name..'')
-library.theme.accentcolor = Color3.fromRGB(0, 0, 0)
-library.theme.accentcolor2 = Color3.fromRGB(0, 0, 0)
-library.theme.topheight = 45
-library.theme.TextColor = Color3.fromRGB(0, 0, 0)
 
 local Signal = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quenty/NevermoreEngine/version2/Modules/Shared/Events/Signal.lua"))()
 --local Api = loadstring(game:HttpGet("https://pastebin.com/raw/5L3wV43u"))() 
@@ -8152,13 +8137,3 @@ for _,Player in pairs(Players:GetPlayers()) do
 		end 
 	end 
 end 
-CreateHitElement("Success!",Color3.new(0,1,0))
-ChatScript.moveOldMessages()
-ChatScript.createNewMessage("Storm.Tap","Storm.Tap Has Successfully Loaded!",MainUIColor,Color3.new(1,1,1),0.01,nil)
-ChatScript.moveOldMessages()
-ChatScript.createNewMessage("Storm.Tap","Thank You For Using Storm.Tap",MainUIColor,Color3.new(1,1,1),0.01,nil)
-ChatScript.moveOldMessages()
-ChatScript.createNewMessage("Storm.Tap","Version 1.3.0",MainUIColor,Color3.new(1,1,1),0.01,nil)
-ChatScript.moveOldMessages()
-ChatScript.createNewMessage("Storm.Tap", "Time To Tap >:)",MainUIColor,Color3.new(1,1,1),0.01,nil)
-Print("Private")
