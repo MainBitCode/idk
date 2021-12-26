@@ -5404,6 +5404,200 @@ client:Element("Toggle", "remove killers", {}, function(tbl)
 end) 
 client:Element("ToggleColor", "hitmarker", {default = {Color = COL3RGB(255,255,255)}}) 
 client:Element("Toggle", "buy any grenade") 
+			client:Element("Toggle", "watermark", {}, function(tbl)
+	if tbl.Toggle then
+local idb = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
+local TextLabel_7 = Instance.new("TextLabel")
+local TextLabel_8 = Instance.new("TextLabel")
+local Frame_2 = Instance.new("Frame")
+
+idb.Name = "idb"
+idb.Parent = game.CoreGui
+idb.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = idb
+Frame.BackgroundColor3 = Color3.fromRGB(5, 7, 24)
+Frame.BackgroundTransparency = 0.200
+Frame.Position = UDim2.new(0.712871194, 0, 0.0110429376, 0)
+Frame.Size = UDim2.new(0, 368, 0, 25)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(0, 143, 0, 25)
+TextLabel.Font = Enum.Font.Code
+TextLabel.Text = "Storm.tap"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeTransparency = 0.000
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.387848258, 0, 0, 0)
+TextLabel_2.Size = UDim2.new(0, 0, 0, 25)
+TextLabel_2.Font = Enum.Font.Code
+TextLabel_2.Text = "|"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextStrokeTransparency = 0.000
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(0.512347817, 0, 0, 0)
+TextLabel_3.Size = UDim2.new(0, 43, 0, 25)
+TextLabel_3.Font = Enum.Font.Code
+TextLabel_3.Text = "125ms"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextStrokeTransparency = 0.000
+
+TextLabel_4.Parent = Frame
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0.387848258, 0, 0, 0)
+TextLabel_4.Size = UDim2.new(0, 57, 0, 25)
+TextLabel_4.Font = Enum.Font.Code
+TextLabel_4.Text = "delay:"
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextStrokeTransparency = 0.000
+
+TextLabel_5.Parent = Frame
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.Position = UDim2.new(0.631331861, 0, 0, 0)
+TextLabel_5.Size = UDim2.new(0, 0, 0, 25)
+TextLabel_5.Font = Enum.Font.Code
+TextLabel_5.Text = "|"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextStrokeTransparency = 0.000
+
+TextLabel_6.Parent = Frame
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.BackgroundTransparency = 1.000
+TextLabel_6.Position = UDim2.new(0.631331801, 0, 0, 0)
+TextLabel_6.Size = UDim2.new(0, 68, 0, 25)
+TextLabel_6.Font = Enum.Font.Code
+TextLabel_6.Text = "tick: 64"
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextStrokeTransparency = 0.000
+
+TextLabel_7.Parent = Frame
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.BackgroundTransparency = 1.000
+TextLabel_7.Position = UDim2.new(0.815402091, 0, 0, 0)
+TextLabel_7.Size = UDim2.new(0, 0, 0, 25)
+TextLabel_7.Font = Enum.Font.Code
+TextLabel_7.Text = "|"
+TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.TextSize = 14.000
+TextLabel_7.TextStrokeTransparency = 0.000
+
+TextLabel_8.Parent = Frame
+TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.BackgroundTransparency = 1.000
+TextLabel_8.Position = UDim2.new(0.814664185, 0, 0, 0)
+TextLabel_8.Size = UDim2.new(0, 70, 0, 25)
+TextLabel_8.Font = Enum.Font.Code
+TextLabel_8.Text = "00:00:00"
+TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.TextSize = 14.000
+TextLabel_8.TextStrokeTransparency = 0.000
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(97, 59, 227)
+Frame_2.BackgroundTransparency = 0.100
+Frame_2.BorderColor3 = Color3.fromRGB(97, 59, 227)
+Frame_2.Size = UDim2.new(0, 368, 0, 0)
+
+-- Scripts:
+
+local function HEZXMO_fake_script() -- TextLabel_3.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel_3)
+
+	function GetPing()
+		local Ping = 300-((1/wait())*10)
+		if Ping < 1 then
+			Ping = 1
+		end
+		return math.floor(Ping)
+	end
+	
+	while wait() do
+		script.Parent.Text = GetPing().. "ms"
+	end
+end
+coroutine.wrap(HEZXMO_fake_script)()
+local function FOZJBN_fake_script() -- TextLabel_8.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel_8)
+
+	local mo = "A.M."
+	local mont = nil
+	while wait() do
+		local l = math.fmod(tick(),86400)
+		local h = math.floor(l/3600)
+		local m = math.floor(l/60-h*60)
+		local s = math.floor(math.fmod(l,60))
+		local y = math.floor(1970+tick()/31579200)
+		local mon = {{"January",31,31},{"February",59,28},{"March",90,31},{"April",120,30},{"May",151,31},{"June",181,30},{"July",212,31},{"August",243,31},{"September",273,30},{"October",304,31},{"November",334,30},{"December",365,31}}
+		if y%4 == 0 then
+			mon[2][3] = 29
+			for i,v in pairs(mon) do
+				if i ~= 1 then
+					v[2] = v[2] + 1
+				end
+			end
+		end
+		local d = math.floor(tick()/86400%365.25+1)
+		for i,v in pairs(mon) do
+			if v[2]-v[3]<=d then
+				mont = i
+			end
+		end
+		d = d + mon[mont][3]-mon[mont][2]
+		if m <= 9 then
+			m = "0" ..m
+		end
+		if s <= 9 then
+			s = "0" ..s
+		end
+		if h >= 12 then
+			mo = "P.M."
+		else
+			mo = "A.M."
+		end
+		if h > 12 then
+			h = h - 12
+		end
+		script.Parent.Text = h.. ":" ..m.. ":" ..s
+		end
+	
+end
+coroutine.wrap(FOZJBN_fake_script)()
+local function KYFH_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	
+	local gui = script.Parent
+	gui.Draggable = true
+	gui.Active = true
+end
+coroutine.wrap(KYFH_fake_script)()
+	else
+		game.CoreGui.idb:Destroy()
+	end
+	end)
 
 client:Element("Toggle", "specators list", {}, function(tbl)
 	if tbl.Toggle then
@@ -6379,14 +6573,14 @@ RunService.RenderStepped:Connect(function(step)
 						Client.DISABLED = false 
 					end 
 					spawn(function()
-						if Player.Character and Player.Character:FindFirstChild("Humanoid") and Player.Character:FindFirstChild("Humanoid").Health > 100 and Player.Team ~= "TTT" and Player ~= LocalPlayer then      
+						if Player.Character and Player.Character:FindFirstChild("Humanoid") and Player.Character:FindFirstChild("Humanoid").Health > 90 and Player.Team ~= "TTT" and Player ~= LocalPlayer then      
 							if TBLFIND(values.rage.aimbot.resolver.Jumbobox, "Pitch") then      
-								Player.Character.UpperTorso.Waist.C0 = CFAngles(2, 5, 10)      
-								Player.Character.LowerTorso.Root.C0 = CFAngles(1,4,10)
+								Player.Character.UpperTorso.Waist.C0 = CFAngles(2.5, 4, 8)      
+								Player.Character.LowerTorso.Root.C0 = CFAngles(3, 6, 12)
 								Player.Character.Head.Neck.C0 = CFrame.new(0,5,0) * CFAngles(0, 0, 0) 
 							end      
 							if TBLFIND(values.rage.aimbot.resolver.Jumbobox, "Roll") then      
-								Player.Character.Humanoid.MaxSlopeAngle = 4      
+								Player.Character.Humanoid.MaxSlopeAngle = 0      
 							end  
 							if TBLFIND(values.rage.aimbot.resolver.Jumbobox, "Animation") then     
 								for i2,Animation in pairs(Player.Character.Humanoid:GetPlayingAnimationTracks()) do
@@ -7335,6 +7529,38 @@ mt.__namecall = function(self, ...)
 
 	return oldNamecall(self, unpack(args)) 
 end 
+
+mt.__index = newcclosure(function(self, key)
+	local CallingScript = getcallingscript()
+
+	if not checkcaller() and self == Viewmodels and LocalPlayer.Character ~= nil and LocalPlayer.Character:FindFirstChild("UpperTorso") then
+		local WeaponName = string.gsub(key, "v_", "")
+		if not string.find(WeaponName, "Arms") then
+			if Weapons[WeaponName]:FindFirstChild("Melee") and values.skins.knife["knife changer"].Toggle then
+				if Viewmodels:FindFirstChild("v_"..values.skins.knife.model.Scroll) then
+					return Viewmodels:FindFirstChild("v_"..values.skins.knife.model.Scroll)
+				else
+					local Clone = Models.Knives[values.skins.knife.model.Scroll]:Clone()
+					return Clone
+				end
+			end
+		end
+	end
+	if key == "Value" then
+		if self.Name == "Auto" and table.find(values.misc.client["gun modifiers"].Jumbobox, "automatic") then
+			return true
+		elseif self.Name == "ReloadTime" and table.find(values.misc.client["gun modifiers"].Jumbobox, "reload") then
+			return 0.001
+		elseif self.Name == "EquipTime" and table.find(values.misc.client["gun modifiers"].Jumbobox, "equip") then
+			return 0.001
+		elseif self.Name == "BuyTime" and table.find(values.misc.client.shop.Jumbobox, "inf time") then
+			return 5
+		end
+	end
+
+	return oldIndex(self, key)
+end)
+
 mt.__newindex = function(self, i, v) 
 	if self:IsA("Humanoid") and i == "JumpPower" and not checkcaller() then 
 		if values.misc.movement["jump bug"].Toggle and values.misc.movement["jump bug"].Active then 
@@ -7425,7 +7651,7 @@ LocalPlayer.Additionals.TotalDamage:GetPropertyChangedSignal("Value"):Connect(fu
 
 	local sound = INST("Sound") 
 	sound.Parent = game:GetService("SoundService") 
-	sound.SoundId = values.visuals.world.hitsound.Dropdown == "skeet" and "rbxassetid://5447626464" or values.visuals.world.hitsound.Dropdown == "neverlose" and "rbxassetid://5043539486" or values.visuals.world.hitsound.Dropdown == "rust" and "rbxassetid://5043539486" or values.visuals.world.hitsound.Dropdown == "bag" and "rbxassetid://364942410" or values.visuals.world.hitsound.Dropdown == "baimware" and "rbxassetid://6607339542" or values.visuals.world.hitsound.Dropdown == "osu" and "rbxassetid://7149919358" or values.visuals.world.hitsound.Dropdown == "Tf2" and "rbxassetid://296102734" or values.visuals.world.hitsound.Dropdown == "Tf2 pan" and "rbxassetid://3431749479" or values.visuals.world.hitsound.Dropdown  == "M55solix" and "rbxassetid://364942410" or values.visuals.world.hitsound.Dropdown == "Slap" and "rbxassetid://4888372697" or values.visuals.world.hitsound.Dropdown  == "1" and "rbxassetid://7349055654" or values.visuals.world.hitsound.Dropdown == "Minecraft" and "rbxassetid://7273736372" or values.visuals.world.hitsound.Dropdown == "jojo" and "rbxassetid://6787514780" or values.visuals.world.hitsound.Dropdown == "vibe" and "rbxassetid://1848288500" or values.visuals.world.hitsound.Dropdown == "supersmash" and "rbxassetid://2039907664" or values.visuals.world.hitsound.Dropdown == "epic" and "rbxassetid://7344303740" or values.visuals.world.hitsound.Dropdown == "retro" and "rbxassetid://3466984142" or values.visuals.world.hitsound.Dropdown == "quek" and "rbxassetid://4868633804" or values.visuals.world.hitsound.Dropdown 
+	sound.SoundId = values.visuals.world.hitsound.Dropdown == "skeet" and "rbxassetid://5447626464" or values.visuals.world.hitsound.Dropdown == "neverlose" and "rbxassetid://5043539486" or values.visuals.world.hitsound.Dropdown == "rust" and "rbxassetid://5043539486" or values.visuals.world.hitsound.Dropdown == "bag" and "rbxassetid://364942410" or values.visuals.world.hitsound.Dropdown == "baimware" and "rbxassetid://6607339542" or values.visuals.world.hitsound.Dropdown == "osu" and "rbxassetid://7149919358" or values.visuals.world.hitsound.Dropdown == "Tf2" and "rbxassetid://296102734" or values.visuals.world.hitsound.Dropdown == "Tf2 pan" and "rbxassetid://3431749479" or values.visuals.world.hitsound.Dropdown  == "M55solix" and "rbxassetid://364942410" or values.visuals.world.hitsound.Dropdown == "Slap" and "rbxassetid://4888372697" or values.visuals.world.hitsound.Dropdown  == "1" and "rbxassetid://7349055654" or values.visuals.world.hitsound.Dropdown == "Minecraft" and "rbxassetid://7273736372" or values.visuals.world.hitsound.Dropdown == "jojo" and "rbxassetid://6787514780" or values.visuals.world.hitsound.Dropdown == "vibe" and "rbxassetid://1848288500" or values.visuals.world.hitsound.Dropdown == "supersmash" and "rbxassetid://2039907664" or values.visuals.world.hitsound.Dropdown == "epic" and "rbxassetid://7344303740" or values.visuals.world.hitsound.Dropdown == "retro" and "rbxassetid://3466984142" or values.visuals.world.hitsound.Dropdown == "quek" and "rbxassetid://4868633804" or values.visuals.world.hitsound.Dropdown or values.visuals.world.hitsound.Dropdown == "Slap" and "rbxassetid://4888372697"
 	sound.Volume = values.visuals.world["sound volume"].Slider 
 	sound.PlayOnRemove = true 
 	sound:Destroy() 
