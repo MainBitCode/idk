@@ -6566,29 +6566,26 @@ RunService.RenderStepped:Connect(function(step)
 		local RageGuy 
 		if workspace:FindFirstChild("Map") and Client.gun ~= "none" and Client.gun.Name ~= "C4" then 
 			if values.rage.aimbot.enabled.Toggle then 
-				local Origin = values.rage.aimbot.origin.Dropdown == "character" and LocalPlayer.Character.LowerTorso.Position + Vec3(0, 2.5, 0) or CamCFrame.p 
-				local Stats = GetStatsRage(GetWeaponRage(Client.gun.Name)) 
-				for _,Player in pairs(Players:GetPlayers()) do 
-					if TBLFIND(values.misc.client["gun modifiers"].Jumbobox, "firerate") then 
-						Client.DISABLED = false 
-					end 
-					spawn(function()
-						if Player.Character and Player.Character:FindFirstChild("Humanoid") and Player.Character:FindFirstChild("Humanoid").Health > 90 and Player.Team ~= "TTT" and Player ~= LocalPlayer then      
-							if TBLFIND(values.rage.aimbot.resolver.Jumbobox, "Pitch") then      
-								Player.Character.UpperTorso.Waist.C0 = CFAngles(2.5, 4, 8)      
-								Player.Character.LowerTorso.Root.C0 = CFAngles(3, 6, 12)
-								Player.Character.Head.Neck.C0 = CFrame.new(0,5,0) * CFAngles(0, 0, 0) 
-							end      
-							if TBLFIND(values.rage.aimbot.resolver.Jumbobox, "Roll") then      
-								Player.Character.Humanoid.MaxSlopeAngle = 0      
-							end  
-							if TBLFIND(values.rage.aimbot.resolver.Jumbobox, "Animation") then     
-								for i2,Animation in pairs(Player.Character.Humanoid:GetPlayingAnimationTracks()) do
-									Animation:Stop()
-								end
-							end     
+				local Origin = values.rage.ragebot.origin.Dropdown == "character" and LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0, 1.4, 0) or CamCFrame.p
+				local Stats = GetStatsRage(GetWeaponRage(Client.gun.Name))      
+				for _,Player in pairs(Players:GetPlayers()) do      
+					if TBLFIND(values.misc.client["gun modifiers"].Jumbobox, "firerate") then      
+						Client.DISABLED = false      
+					end      
+					if Player.Character and Player.Character:FindFirstChild("Humanoid") and Player.Character:FindFirstChild("Humanoid").Health > 0 and Player.Team ~= "TTT" and Player ~= LocalPlayer then      
+						if TBLFIND(values.rage.ragebot.resolver.Jumbobox, "pitch") then      
+							Player.Character.UpperTorso.Waist.C0 = CF(Vec3(0,0.6,0))
+							Player.Character.Head.CFrame = CF(Player.Character.Head.Position)
+						end
+						if TBLFIND(values.rage.ragebot.resolver.Jumbobox, "roll") then      
+							Player.Character.Humanoid.MaxSlopeAngle = 0      
 						end  
-					end)    
+						if TBLFIND(values.rage.ragebot.resolver.Jumbobox, "animation") then     
+							for i2,Animation in pairs(Player.Character.Humanoid:GetPlayingAnimationTracks()) do
+								Animation:Stop()
+							end
+						end     
+					end    
 					if Player.Character and Player.Character:FindFirstChild("Humanoid") and not Client.DISABLED and Player.Character:FindFirstChild("Humanoid").Health > 0 and Player.Team ~= "TTT" and not Player.Character:FindFirstChildOfClass("ForceField") and GetDeg(CamCFrame, Player.Character.Head.Position) <= Stats["max fov"].Slider and Player ~= LocalPlayer then 
 						if Player.Team ~= LocalPlayer.Team or values.rage.aimbot.teammates.Toggle and Player:FindFirstChild("Status") and Player.Status.Team.Value ~= LocalPlayer.Status.Team.Value and Player.Status.Alive.Value then 
 							if Client.gun:FindFirstChild("Melee") and values.rage.aimbot["knifebot"].Toggle then 
@@ -7421,50 +7418,22 @@ mt.__namecall = function(self, ...)
 			args[1] = RageTarget 
 			args[2] = RageTarget.Position 
 		end
-	if values.rage.aimbot["prediction"].Dropdown ~= "off" and RageTarget ~= nil then
-		coroutine.wrap(function()
-			if Players:GetPlayerFromCharacter(args[1].Parent) or args[1] == RageTarget then
-				if values.rage.aimbot["prediction"].Dropdown == "cframe" then
-					if Players:GetPlayerFromCharacter(args[1].Parent) or args[1] == RageTarget then 
-						local hrp = RageTarget.Parent.HumanoidRootPart.Position 
-						local oldHrp = RageTarget.Parent.HumanoidRootPart.OldPosition.Value 
-	
-						local vel = (Vec3(hrp.X, 0, hrp.Z) - Vec3(oldHrp.X, 0, oldHrp.Z)) / LastStep 
-						local dir = Vec3(vel.X / vel.magnitude, 0, vel.Z / vel.magnitude) 
-	
-						
-						args[2] = args[2] + dir * (Ping / (POW(Ping, 1.5)) * (dir / (dir / 2))) 
-						args[4] = 0 
-						args[12] = args[12] - 500 
-					end
-				else
-						local Velocity = RageTarget.Parent.HumanoidRootPart.Velocity
-						local Direction = Vector3.new(Velocity.X/Velocity.magnitude, 0, Velocity.Z/Velocity.magnitude)
-						if Velocity.magnitude >= 8 then
-							args[2] = args[2] + Direction * (Velocity.magnitude*(Ping/1000) * (Ping > 200 and 1.5 or 2))
-							args[4] = 0
-							args[12] = args[12] - 500
-						end
-					end
-				end
-			end)()
+		if (values.rage.ragebot["prediction"].Toggle and RageTarget ~= nil) then      
+			coroutine.wrap(function()      
+				if Players:GetPlayerFromCharacter(args[1].Parent) or args[1] == RageTarget then      
+					local hrp = RageTarget.Parent.HumanoidRootPart.Position      
+					local oldHrp = RageTarget.Parent.HumanoidRootPart.OldPosition.Value      
+
+					local vel = (Vec3(hrp.X, 0, hrp.Z) - Vec3(oldHrp.X, 0, oldHrp.Z)) / LastStep      
+					local dir = Vec3(vel.X / vel.magnitude, 0, vel.Z / vel.magnitude)      
+
+					      
+					args[2] = args[2] + dir * (Ping / (POW(Ping, 1.5)) * (dir / (dir / 2)))      
+					args[4] = 0      
+					args[12] = args[12] - 500      
+				end      
+			end)()      
 		end
-		if (values.rage.aimbot["prediction"].Toggle and RageTarget ~= nil) then 
-			coroutine.wrap(function() 
-				if Players:GetPlayerFromCharacter(args[1].Parent) or args[1] == RageTarget then 
-					local hrp = RageTarget.Parent.HumanoidRootPart.Position 
-					local oldHrp = RageTarget.Parent.HumanoidRootPart.OldPosition.Value 
-
-					local vel = (Vec3(hrp.X, 0, hrp.Z) - Vec3(oldHrp.X, 0, oldHrp.Z)) / LastStep 
-					local dir = Vec3(vel.X / vel.magnitude, 0, vel.Z / vel.magnitude) 
-
-					 
-					args[2] = args[2] + dir * (Ping / (POW(Ping, 1.5)) * (dir / (dir / 2))) 
-					args[4] = 0 
-					args[12] = args[12] - 500 
-				end 
-			end)() 
-		end 
 		 
 		if values.visuals.world["bullet tracers"].Toggle then 
 			coroutine.wrap(function() 
@@ -8363,3 +8332,4 @@ for _,Player in pairs(Players:GetPlayers()) do
 		end 
 	end 
 end 
+
