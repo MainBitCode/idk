@@ -2,17 +2,20 @@ getgenv().newname = game:GetService("Players").LocalPlayer.Name
 
 local username = {    
 	"hampe",
-	"paul"
+	"paul",
+	"gender"
 
 }
 local password = { 
 	"123",
-	"321"
+	"321",
+	"111"
 
 }
 local account = { 
 	3136731685,
-	1408946086
+	1408946086,
+	2606212359
 
 }
 
