@@ -41,6 +41,10 @@ local InjectCheatName = Instance.new("TextLabel")
 local InjectButton = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
+local GradientDown = Instance.new("Frame")
+local GradientUp = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient") 
+local UIGradient2 = Instance.new("UIGradient") 
  
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -152,14 +156,15 @@ InjectCheatLogo.Size = UDim2.new(0, 167, 0, 182)
 InjectCheatLogo.Image = "rbxassetid://10450621876"
 
 InjectUsername.Name = "InjectUsername"
-InjectUsername.Parent = InjectMainBG
+InjectUsername.Parent = InjectMainFrame
 InjectUsername.BackgroundColor3 = Color3.new(1, 1, 1)
 InjectUsername.BackgroundTransparency = 1
-InjectUsername.Position = UDim2.new(0.196875006, 0, 0.297142833, 0)
+InjectUsername.Position = UDim2.new(0, 60, 0, 90)
 InjectUsername.Size = UDim2.new(0, 200, 0, 50)
+InjectUsername.ZIndex = 2
 InjectUsername.Font = Enum.Font.SourceSansBold
-InjectUsername.Text = "-"
-InjectUsername.TextColor3 = Color3.new(0.698039, 0.698039, 1)
+InjectUsername.Text = ""
+InjectUsername.TextColor3 = Color3.new(0.521569, 0.545098, 0.882353)
 InjectUsername.TextSize = 20
 
 InjectCBLogo.Name = "InjectCBLogo"
@@ -223,6 +228,28 @@ TextLabel_2.Font = Enum.Font.SourceSans
 TextLabel_2.Text = "Lifetime"
 TextLabel_2.TextColor3 = Color3.new(0.862745, 0.862745, 0.862745)
 TextLabel_2.TextSize = 14
+ 
+GradientDown.Name = "GradientDown"
+GradientDown.Parent = InjectMainFrame
+GradientDown.BackgroundColor3 = Color3.new(0, 0, 0.0352941)
+GradientDown.BorderSizePixel = 0
+GradientDown.Position = UDim2.new(0, 156, 0, -48)
+GradientDown.Rotation = 270
+GradientDown.Size = UDim2.new(0, 9, 0, 320)
+
+UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(1, 1)}
+UIGradient.Parent = GradientDown 
+
+GradientUp.Name = "GradientUp"
+GradientUp.Parent = InjectMainFrame
+GradientUp.BackgroundColor3 = Color3.new(0, 0, 0.0352941)
+GradientUp.BorderSizePixel = 0
+GradientUp.Position = UDim2.new(0, 156, 0, -40)
+GradientUp.Rotation = 90
+GradientUp.Size = UDim2.new(0, 9, 0, 320)
+
+UIGradient2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(1, 1)}
+UIGradient2.Parent = GradientUp 
 
 --Loading
 
